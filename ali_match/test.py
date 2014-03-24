@@ -6,6 +6,7 @@ brand = 0
 result = defaultdict(set)
 f = open("data/result.txt")
 for line in f.readlines():
+    line = line.strip()
     uid, bid = line.split("\t")
     result[uid] = bid.split(",")
     brand += len(result[uid])
@@ -14,6 +15,7 @@ f.close()
 
 f = open("data/predict.txt")
 for line in f.readlines():
+    line = line.strip()
     uid, bid = line.split("\t")
     bid = bid.split(",")
     predict_num += len(bid)
